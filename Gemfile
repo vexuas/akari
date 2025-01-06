@@ -6,3 +6,4 @@ source "https://rubygems.org"
 
 gem "discordrb", "~> 3.5"
 gem 'htmlbeautifier'
+gem 'dotenv'

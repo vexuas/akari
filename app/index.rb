@@ -1,9 +1,15 @@
 require 'discordrb'
+require 'dotenv'
 
-bot = Discordrb::Bot.new token: '<token here>'
+Dotenv.load
 
-bot.message(with_text: 'Ping!') do |event|
-  event.respond 'Pong!'
+bot = Discordrb::Bot.new(token: ENV['BOT_TOKEN'], intents: [:servers])
+
+bot.register_application_command(:hello, 'Hello Command', server_id: 1324771533197152390) do
+end
+
+bot.application_command(:hello) do |event|
+  event.respond(content: 'Hi! owo')
 end
 
 bot.run
