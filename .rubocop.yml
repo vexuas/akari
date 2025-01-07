@@ -1,23 +1,18 @@
-# Inherits the default rules from RuboCop's base configuration
-inherit_gem:
-  rubocop: config/default.yml
+inherit_from: .rubocop_todo.yml
+
+require: rubocop-rails
 
 # Specify the Ruby version your project uses
 AllCops:
-  TargetRubyVersion: 3.2.2
-  Exclude:
-    - "db/schema.rb"       # Ignore Rails schema file
-    - "bin/**/*"           # Ignore executables
-    - "node_modules/**/*"  # Ignore node modules
-    - "vendor/**/*"        # Ignore vendor directory
+  TargetRubyVersion: 3.1
+  NewCops: disable
 
 # Layout rules
 Layout/LineLength:
   Max: 120                # Allow lines up to 120 characters
-  IgnoreURLs: true        # Ignore long URLs in strings and comments
 
 Layout/IndentationWidth:
-  EnforcedStyle: normal   # Use 2 spaces for indentation
+  Enabled: true   # Use 2 spaces for indentation
   Width: 2
 
 Layout/TrailingWhitespace:
@@ -39,28 +34,3 @@ Style/StringLiterals:
 
 Style/Documentation:
   Enabled: false          # Don't require documentation for every class/module
-
-# Metrics rules
-Metrics/BlockLength:
-  Max: 25                 # Max number of lines per block
-  Exclude:
-    - "Rakefile"          # Ignore Rakefiles
-
-Metrics/MethodLength:
-  Max: 15                 # Max number of lines per method
-
-Metrics/ClassLength:
-  Max: 150                # Max number of lines per class
-
-# Custom rules for specific directories
-Rails:
-  Enabled: true           # Enable Rails-specific cops
-
-Rails/HasManyOrHasOneDependent:
-  Enabled: true           # Enforce dependent: :destroy for associations
-
-# Custom exclusions
-Lint/UselessAssignment:
-  Exclude:
-    - "spec/**/*"         # Ignore specs for unused variables
-    
