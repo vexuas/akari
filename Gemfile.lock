@@ -13,7 +13,6 @@ GEM
     dotenv (3.1.7)
     event_emitter (0.2.6)
     ffi (1.17.0-arm64-darwin)
-    htmlbeautifier (1.4.3)
     http-accept (1.7.0)
     http-cookie (1.0.8)
       domain_name (~> 0.5)
@@ -41,7 +40,6 @@ PLATFORMS
 DEPENDENCIES
   discordrb (~> 3.5)
   dotenv
-  htmlbeautifier
 
 BUNDLED WITH
    2.4.10

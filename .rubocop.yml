@@ -4,7 +4,7 @@ inherit_gem:
 
 # Specify the Ruby version your project uses
 AllCops:
-  TargetRubyVersion: 3.1
+  TargetRubyVersion: 3.2.2
   Exclude:
     - "db/schema.rb"       # Ignore Rails schema file
     - "bin/**/*"           # Ignore executables
