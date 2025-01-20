@@ -1,9 +1,13 @@
 class Command
   attr_reader name,
-              command_type
+              description,
+              command_type,
+              execute
 
-  def initialize(name:, command_type:)
+  def initialize(name:, description:, command_type:, execute:)
     @name = name
+    @description = description
     @command_type = command_type
+    @execute = execute
   end
 end
