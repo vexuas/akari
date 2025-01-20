@@ -1,8 +1,8 @@
 class Command
-  attr_reader name,
-              description,
-              command_type,
-              handler
+  attr_reader :name,
+              :description,
+              :command_type,
+              :handler
 
   def initialize(name:, description:, command_type:, handler:)
     @name = name
