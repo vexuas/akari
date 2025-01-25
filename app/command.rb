@@ -12,6 +12,6 @@ class Command
   end
 
   def execute(*args)
-    @handler.call(*args)
+    @handler&.call(*args)
   end
 end
